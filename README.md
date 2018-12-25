@@ -4,7 +4,7 @@
 
 Tent Admin System 基础后台管理系统采用前后端完全分离的形式，由前端 [Tent Admin](https://github.com/Cstome/tent-admin) 及后端 [Tent API System](https://github.com/Cstome/tentsys) 组成。
 
-Demo：http://tent.demo.tentpay.com/admin/
+查看 [Demo](http://tent.demo.tentpay.com/admin/) 用户名：demo 密码：demo
 
 ### 前端  Tent Admin
 
@@ -40,7 +40,7 @@ TentAPI 是一套基于 ThinkPHP 开发的 RESTful 风格的 API 基础系统。
 
 TentAdmin 与 Tent API System 可以分别独立运作，但 TentAdmin 暂不自带 mock API， 因此最简单的方法就是同时部署  Tent API System 作为 TentAdmin 的后台支持。
 
-当然，也可以参照 *API 文档*，并将 TentAdmin 对接到自己的API后端系统。
+当然，也可以参照 *[API 文档](https://github.com/Cstome/TentAdminSys/blob/master/TentSYS_API_DOC.md)*，并将 TentAdmin 对接到自己的API后端系统。
 
 ### Tent API System 后端
 
@@ -54,7 +54,7 @@ TentAdmin 与 Tent API System 可以分别独立运作，但 TentAdmin 暂不自
 
 #### 部署流程
 
-1. 将 [tentsys.sql](tentsys.sql) 导入到数据库；
+1. 将 [tentsys.sql](https://github.com/Cstome/TentAdminSys/blob/master/tentsys.sql) 导入到数据库；
 
 2. Clone  [Tent API System](https://github.com/Cstome/tentsys) & Install Dependencies
 
@@ -83,9 +83,9 @@ TentAdmin 与 Tent API System 可以分别独立运作，但 TentAdmin 暂不自
 
 ```json
 {
-	name: "TentSYS",
-	version: "3.0.2",
-	desc: "Powerful REST API system."
+	"name": "TentSYS",
+	"version": "3.0.2",
+	"desc": "Powerful REST API system."
 }
 ```
 
@@ -140,7 +140,11 @@ TentAdmin 与 Tent API System 可以分别独立运作，但 TentAdmin 暂不自
 
 一般是因为后端系统配置问题，凡是出现保存可在开发者工具查看返回结果。
 
+## Reference
 
+[TentAdmin API Document](https://github.com/Cstome/TentAdminSys/blob/master/TentSYS_API_DOC.md) (英文)
+
+[Tent API System 二次开发文档](https://github.com/Cstome/TentAdminSys/blob/master/TentSYS_DEV_DOC.md) (英文)
 
 ## License
 
