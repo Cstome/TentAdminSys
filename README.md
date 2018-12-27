@@ -117,7 +117,7 @@ TentAdmin 与 Tent API System 可以分别独立运作，但 TentAdmin 暂不自
 
 ### 生产环境部署
 
-**后端** - 配置HTTP服务器将 `public` 文件夹设置为根目录即可，URL的伪静态访问可参考 ThinkPHP 文档：[URL访问](https://www.kancloud.cn/manual/thinkphp5_1/353955)
+**后端** - 配置HTTP服务器将 `public` 文件夹设置为根目录，并配置URL的伪静态访问，可参考 ThinkPHP 文档：[URL访问](https://www.kancloud.cn/manual/thinkphp5_1/353955)
 
 **前端** - 执行 `npm run build` 后将打包后的文件放到 `{tentsys}/public/admin` 是最简单的方法，如果修改了 `assetsPublicPath` 则路径需要对应修改。由于默认开启了 history 模式的 router，因此需参考 [HTML5 History 模式](https://router.vuejs.org/zh/guide/essentials/history-mode.html) 进行伪静态设置。
 

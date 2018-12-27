@@ -175,7 +175,7 @@ GET or POST {baseUrl}/oauth/logout
 
 ```json
 {
-    "status": 'OK'
+    "status": "OK"
 }
 ```
 
@@ -252,7 +252,7 @@ PUT {baseUrl}/admin/config/{config_name}
 ##### Request Body
 
 ```json
-{value: value} // @param mixed value - support int, string, array, object.
+{"config_name": "value"} // @param mixed value - support int, string, array, object.
 ```
 
 ##### Response
@@ -383,9 +383,9 @@ POST {baseUrl}/admin/group/
 
 ```json
 {
-    name: string,
-    auth_menu: stringify_json(optional),
-    auth_menu_json: stringify_json(optional)
+    "name": "string",
+    "auth_menu": "stringify_json(optional)",
+    "auth_menu_json": "stringify_json(optional)"
 }
 ```
 
@@ -394,7 +394,7 @@ POST {baseUrl}/admin/group/
 ```json
 {
     "result": "OK",
-    "id": groupid(int)
+    "id": "groupid(int)"
 }
 ```
 
@@ -410,9 +410,9 @@ PUT {baseUrl}/admin/group/{groupid}
 
 ```json
 {
-    name: string,
-    auth_menu: stringify_json,
-    auth_menu_json: stringify_json
+    "name": "string",
+    "auth_menu": "stringify_json",
+    "auth_menu_json": "stringify_json"
 }
 ```
 
@@ -421,7 +421,7 @@ PUT {baseUrl}/admin/group/{groupid}
 ```json
 {
     "result": "OK",
-    "id": groupid(int)
+    "id": "groupid(int)"
 }
 ```
 
