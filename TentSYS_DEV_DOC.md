@@ -1,4 +1,4 @@
-# TentSYS v3 Developments Document
+# TentSYS v3 Developments Documents
 
 > Created: 2018-11-22 13:43:17 by Cstom
 >
@@ -253,6 +253,50 @@ Some keyword is reserved for URL query string.
 - `page` int
 - `pageSize` int
 - `search` string
+
+## Debug
+
+### Return Debug Info in Response Body
+
+```php
+$debugInfo = "This is some debug info.";
+$this->debug($debugInfo); //$debugInfo could be String, Int or Array.
+```
+
+The debug information will return in `debugInfo` field of response body:
+
+```json
+{
+    "totalCount": 27,
+    "pageSize": 10,
+    "page": 1,
+    "list": [...],
+    "debugInfo": "This is some debug info."
+}
+```
+
+### Get Last SQL
+
+```php
+//A get list method of a resource controller.
+public function index()
+{
+    $this->model->order('create_time desc');
+    return $this->getLastSql()->getList();
+}
+```
+
+The last SQL will return in `lastSql` field of response body:
+
+```
+{
+    "totalCount": 27,
+    "pageSize": 10,
+    "page": 1,
+    "list": [...],
+    "lastSql": "SELECT * FROM `table_name` ORDER BY create_time desc LIMIT 0,10"
+}
+```
 
 ## License
 
