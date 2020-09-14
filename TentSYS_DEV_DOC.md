@@ -154,19 +154,18 @@ class Group extends Api
 {
     function initialize()
     {
-        $this->model = new MainModel(); //Defined a MainModel
+        $this->model = new MainModel(); // Defined a MainModel
     }
 
     public function index()
     {
         //Case in ThinkPHP 5
-        $this->model->where('status', 1); //Operate MainModel
+        $this->model->where('status', 1); // Operate MainModel
         //Case in ThinkPHP 5.1
         $this->model = $this->model->where('status', 1);
         
         return $this->getList();
     }
-    
     //... Any other method...
 }
 ```

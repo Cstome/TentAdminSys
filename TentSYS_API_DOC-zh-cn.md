@@ -142,13 +142,13 @@ POST {baseUrl}/oauth/token
 
 ##### Params
 
-| Params     | Type   | Required | Default | Option                                           |
-| ---------- | ------ | -------- | ------- | ------------------------------------------------ |
-| client_id  | string | No       | _None_  | pcclient, iosclient, ...                         |
-| grant_type | string | Yes      |         | MUST be `password` in Password Credentials Grant |
-| scope      | string | No       | read    |                                                  |
-| username   | string | Yes      |         | User name                                        |
-| password   | string | Yes      |         | Password                                         |
+| Params                  | Type   | Required | Default | Option                                           |
+| ----------------------- | ------ | -------- | ------- | ------------------------------------------------ |
+| client_id               | string | No       | _None_  | pcclient, iosclient, ...                         |
+| grant_type              | string | Yes      |         | MUST be `password` in Password Credentials Grant |
+| scope                   | string | No       | read    |                                                  |
+| username\|mobile\|email | string | Yes      |         | username\|mobile\|email 至少包含一个             |
+| password                | string | Yes      |         | Password                                         |
 
 ##### Response
 

@@ -1,6 +1,9 @@
 # Tent API System v3 Developments Document
 
+
+
 ## 项目描述
+
 一个基于 ThinkPHP 的 RESTful API 系统，目前包含以下特性：
 
 - 用户管理（用户，用户组）
@@ -9,8 +12,13 @@
 - RESTful 资源映射
 - 附加调试信息
 
+
+
 ## 框架及依赖
+
 ThinkPHP v5.1.27 (LTS)
+
+
 
 ## 如何启用
 
@@ -23,6 +31,8 @@ $ composer install
 # Quick start PHP build-in http server and specific ./public/ as document root directory.
 $ php -S 0.0.0.0:80 -t ./public/
 ```
+
+
 
 ## 目录结构
 
@@ -47,6 +57,8 @@ www  WEB部署目录（或者子目录）
 
 > 目录及文件命名规范遵照ThinkPHP的规范。
 
+
+
 ## URL访问及路由
 
 在 `{root}/route/route.php`  h中已经定义了全局路由规则：
@@ -70,6 +82,32 @@ Route::resource('api/:version/:module/:controller','api/:version.:module.:contro
 | DELETE         | controller/:id      | delete                       |
 
 TentSYS 直接使用了 ThinkPHP 的 [资源控制器](https://www.kancloud.cn/manual/thinkphp5_1/353984) ，可查阅文档了解更多。
+
+
+
+## 数据库
+
+Tent API 系统规定每个数据表包含以下字段：
+
+- `id` 
+- `status` 0: 停用, 1: 正常, -1: 已删除
+- `create_time` int unixtimetamp
+- `update_time` int unixtimetamp
+
+Example:
+
+```sql
+CREATE TABLE `admin_user` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `some_field` varchar(255) DEFAULT NULL,
+  `status` tinyint(1) DEFAULT '1',
+  `create_time` int(11) DEFAULT NULL,
+  `update_time` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+```
+
+
 
 ## 控制器
 
@@ -262,27 +300,9 @@ class User extends Api
 }
 ```
 
-## 数据库
+### 控制器中的其他方法
 
-Tent API 系统规定每个数据表包含以下字段：
 
-- `id` 
-- `status` 0: 停用, 1: 正常, -1: 已删除
-- `create_time` int unixtimetamp
-- `update_time` int unixtimetamp
-
-Example:
-
-```sql
-CREATE TABLE `admin_user` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `some_field` varchar(255) DEFAULT NULL,
-  `status` tinyint(1) DEFAULT '1',
-  `create_time` int(11) DEFAULT NULL,
-  `update_time` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-```
 
 ## 保留参数
 

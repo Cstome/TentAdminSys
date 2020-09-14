@@ -101,8 +101,34 @@ DELETE `{baseUrl}/resource/:id` delete resource by id.
 ### 1.1 Sign up account
 
 ```
-POST {baseUrl}/oauth/signup
+POST {baseUrl}/oauth/register
 ```
+
+##### Request Payload
+
+```json
+{
+    username: "",
+    password: "",
+    mobile: "",
+    email: "",
+    gid: 4,
+    regcode: ''
+}
+```
+
+##### Params
+
+| Params   | Type   | Required | Default | Option                   |
+| -------- | ------ | -------- | ------- | ------------------------ |
+| username | string | No       |         | pcclient, iosclient, ... |
+| password | string | Yes      |         | 密码                     |
+| mobile   | string | Yes      |         | 手机号                   |
+| email    | string | Yes      |         | User name                |
+| gid      | Int    | Yes      |         | Password                 |
+| regcode  | string | No       |         | 注册识别码               |
+
+##### 
 
 ### 1.2 Get access token
 
@@ -147,7 +173,7 @@ POST {baseUrl}/oauth/token
 | client_id  | string | No       | _None_  | pcclient, iosclient, ...                         |
 | grant_type | string | Yes      |         | MUST be `password` in Password Credentials Grant |
 | scope      | string | No       | read    |                                                  |
-| username   | string | Yes      |         | User name                                        |
+| username   | string | Yes      |         | username\|mobile\|email must has one.            |
 | password   | string | Yes      |         | Password                                         |
 
 ##### Response
